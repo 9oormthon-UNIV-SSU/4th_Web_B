@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>게시글3</title>
+    </head>
+    <body>
+        <h1>3단계: 게시글 불러오기</h1>
+        <div id="post">
+            <h2 id="title"></h2>
+            <input type="number" id="postId" placeholder="번호 입력" />
+            <button id="loadBtn">입력</button>
+            <p id="body"></p>
+            <p id="errorMessage" style="color: red"></p>
+        </div>
+
+        <script>
+            document.getElementById('loadBtn').addEventListener('click', function () {
+                const postId = document.getElementById('postId').value;
+                const titleEl = document.getElementById('title');
+                const bodyEl = document.getElementById('body');
+                const errorEl = document.getElementById('errorMessage');
+
+                // postID유효성 검사
+                if (!postId || isNaN(postId) || Number(postId) <= 0) {
+                    errorEl.innerText = '⚠️ 유효한 게시글 ID(1 이상의 숫자)를 입력해주세요!';
+                    titleEl.innerText = '';
+                    bodyEl.innerText = '';
+                    return;
+                }
+
+                // fetch로 게시글 데이터 가져오기
+                fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+                    .then((response) => {
+                        if (!response.ok) {
+                            return;
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        // DOM 요소에 데이터 출력
+                        errorEl.innerText = '';
+                        titleEl.innerText = data.title;
+                        bodyEl.innerText = data.body;
+                    })
+                    .catch((error) => {
+                        console.error('에러 발생:', error);
+                        errorEl.innerText = `⚠️ 유효한 게시글 ID(1 이상의 숫자)를 입력해주세요!'`;
+                        titleEl.innerText = '';
+                        bodyEl.innerText = '';
+                    });
+            });
+        </script>
+    </body>
+</html>
