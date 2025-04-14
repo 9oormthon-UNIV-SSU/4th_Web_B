@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>2.html</title>
+</head>
+<body>
+  <h1>2단계 : 게시글 불러오기</h1>
+  <input type="number" id="postId" placeholder="post ID 입력 (ex. 1)" />
+  <button id="fetchBtn">게시글 불러오기</button>
+  <div id="post"></div>
+
+  <script>
+    document.getElementById("fetchBtn").addEventListener("click", () => {
+      const id = document.getElementById("postId").value;
+
+      fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(res => res.json())
+        .then(data => {
+          const postDiv = document.getElementById("post");
+          postDiv.innerHTML = `
+            <h2>${data.title}</h2>
+            <p>${data.body}</p>
+          `;
+        })
+        .catch(error => {
+          console.error("에러 발생 :", error);
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>1.html</title>
+</head>
+<body>
+  <h1>1단계 : 게시글 불러오기</h1>
+  <div id="post"></div>
+
+  <script>
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then(res => res.json())
+      .then(data => {
+        const postDiv = document.getElementById("post");
+        postDiv.innerHTML = `
+          <h2>${data.title}</h2>
+          <p>${data.body}</p>
+        `;
+      })
+      .catch(error => {
+        console.error("에러 발생 :", error);
+      });
+  </script>
+</body>
+</html>
