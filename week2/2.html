@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>week2 과제 천재민</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <h1>2단계 : 게시글 불러오기</h1>
+    <div style="display: flex;">
+      <input type="text" name= "" id="inputId" placeholder="Post ID 입력 (예: 1)">
+      <button id="btnId" type="button">게시글 불러오기</button>
+    </div>
+    <div id="content"></div>
+    <script>
+      document.getElementById('btnId').addEventListener('click', function() {
+        const inputId = document.getElementById('inputId').value;
+        fetch(`https://jsonplaceholder.typicode.com/posts/${inputId}`)  
+          .then(response => response.json())
+          .then(data => {
+            const contentDiv = document.getElementById('content')
+
+            const p1 = document.createElement('h2');
+            const p2 = document.createElement('p');
+
+            p1.textContent = data.title;
+            p2.textContent = data.body;
+
+            contentDiv.innerHTML = '';
+            contentDiv.appendChild(p1);
+            contentDiv.appendChild(p2);
+          })
+          .catch(error => {
+            console.error("에러 발생:", error);
+          });
+      });
+    </script>
+</body>
+
+</html>
