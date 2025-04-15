@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>3.html</title>
+</head>
+<body>
+  <h1>3단계 : 게시글 불러오기</h1>
+  <input type="number" id="postId" placeholder="Post ID 입력 (ex. 1)" />
+  <button id="fetchBtn">게시글 불러오기</button>
+  <div id="post"></div>
+  <p id="errorMsg" style="color: red;"></p>
+
+  <script>
+    document.getElementById("fetchBtn").addEventListener("click", () => {
+      const id = document.getElementById("postId").value;
+      const postDiv = document.getElementById("post");
+      const errMsg = document.getElementById("errorMsg");
+
+      postDiv.innerHTML = "";
+      errorMsg.textContent = "";
+
+      // 유효성 검사
+      if (!id || id <= 0 || isNaN(id)) {
+        errorMsg.textContent = "❗ 유효한 숫자 ID를 입력해주세요.";
+        return;
+      }
+
+      fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error("존재하지 않는 게시글입니다.");
+          }
+          return res.json();
+        })
+        .then(data => {
+          postDiv.innerHTML = `
+            <h2>${data.title}</h2>
+            <p>${data.body}</p>
+          `;
+        })
+        .catch(error => {
+            errorMsg.textContent = error.message;
+        });
+    });
+  </script>
+</body>
+</html>
