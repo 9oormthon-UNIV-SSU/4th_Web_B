@@ -2,7 +2,7 @@
 - 25.04.01 ~
 
 ## 참여자
-| <a href="https://github.com/Chaerrrish"> 채린 | <a href="https://github.com/jongse7"> 세종 | <a href="https://github.com/chunjaemin"> 재민 | <a href="https://github.com/naraeng"> 나래 | <a href="https://github.com/kangyeeun0"> 예은 |
+| <a href="https://github.com/Chaerrrish"> 채린(스터디장) | <a href="https://github.com/jongse7"> 세종 | <a href="https://github.com/chunjaemin"> 재민 | <a href="https://github.com/naraeng"> 나래 | <a href="https://github.com/kangyeeun0"> 예은 |
 | --- | --- | --- | --- | --- |
 | <img src="https://github.com/Chaerrrish.png" width="100"> | <img src="https://github.com/jongse7.png" width="100"> | <img src="https://github.com/chunjaemin.png" width="100"> | <img src="https://github.com/naraeng.png" width="100"> | <img src="https://github.com/kangyeeun0.png" width="100"> |
 
