@@ -1,0 +1,60 @@
+#root {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-box {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width : 80%;
+  border: 1px solid rgb(99, 204, 204);
+  height: 40px;
+  margin-right: 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 40px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(99, 204, 204);
+}
+
+.todoList-title{
+  
+  color: rgb(99, 204, 204);
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.todoList-item{
+  width : 500px;
+  aspect-ratio: 5/1;
+  border: 1px solid rgb(99, 204, 204);
+  color: rgb(99, 204, 204);
+}
+
+.item-title{
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.delete-btn{
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 40px;
+  border: 1px solid rgb(99, 204, 204);
+  cursor: pointer;
+}
