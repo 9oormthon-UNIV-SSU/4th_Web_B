@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: pink;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 13px;
+    width: 300px;
+    border: 1px solid pink;
+    border-radius: 15px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ffcfe0;
+    color: rgb(255, 99, 125);
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-item {
+    border: 1px solid rgb(255, 154, 171);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    color: rgb(255, 105, 130);
+  }
+  
