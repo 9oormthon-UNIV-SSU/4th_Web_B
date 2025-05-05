@@ -53,14 +53,19 @@
 }
 
 .todo_item {
-    width: 300px;
+    width: 400px;
     height: 50px;
-    border: 1px solid lightblue;
+    border-bottom: 1px solid lightblue;
     align-items: center;
     color: lightblue;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item_checked {
+    text-decoration: line-through;
 }
 
 .todo-delete {
@@ -69,6 +74,34 @@
     background-color: transparent;
     cursor: pointer;
     padding: 0;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.items-container {
+    width: 400px;
+    min-height: 200px;
+    border: 1px solid lightblue;
+}
+
+.filter-button,
+.filter-button-active {
+    color: lightblue;
+    &:hover {
+        border: lightblue;
+    }
+    border: lightblue 1px solid;
+    border-radius: 0px;
+}
+
+.filter-button-active {
+    background-color: lightblue;
+    color: white;
+
+    &:focus {
+        border: skyblue;
+    }
 }
 
 @keyframes logo-spin {

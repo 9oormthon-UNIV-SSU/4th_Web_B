@@ -1,13 +1,26 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import Header from './Header';
 
-function TodoBoard({ todoList, setTodoList }) {
+function TodoBoard({ todoList, setTodoList, onChange }) {
+    console.log(todoList);
     return (
         <div>
-            <h1 className="todo-title">Todo List</h1>
-            {todoList.map((item, index) => (
-                <TodoItem key={index} item={item} index={index} todoList={todoList} setTodoList={setTodoList} />
-            ))}
+            <div className="items-container">
+                {todoList.length > 0 ? (
+                    todoList.map((item) => (
+                        <TodoItem
+                            key={item.id}
+                            item={item}
+                            todoList={todoList}
+                            setTodoList={setTodoList}
+                            onChange={onChange}
+                        />
+                    ))
+                ) : (
+                    <p>할 일이 없습니다!</p>
+                )}
+            </div>
         </div>
     );
 }
