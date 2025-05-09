@@ -1,0 +1,128 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-div {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.todo-input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid lightblue;
+}
+
+.todo-button {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    height: 45px;
+    width: 70px;
+    font-size: medium;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.todo-title {
+    color: lightblue;
+    text-align: center;
+}
+
+.todo_item {
+    width: 400px;
+    height: 50px;
+    border-bottom: 1px solid lightblue;
+    align-items: center;
+    color: lightblue;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item_checked {
+    text-decoration: line-through;
+}
+
+.todo-delete {
+    border: none;
+    color: red;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.items-container {
+    width: 400px;
+    min-height: 200px;
+    border: 1px solid lightblue;
+}
+
+.filter-button,
+.filter-button-active {
+    color: lightblue;
+    &:hover {
+        border: lightblue;
+    }
+    border: lightblue 1px solid;
+    border-radius: 0px;
+}
+
+.filter-button-active {
+    background-color: lightblue;
+    color: white;
+
+    &:focus {
+        border: skyblue;
+    }
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
