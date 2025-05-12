@@ -1,14 +1,19 @@
-import { useTodoContext } from "../hook/useTodo";
-import { Filter } from "../page";
+import { Filter, TodoItemType } from "../page";
 import TodoItem from "./TodoItem";
 
 interface TodoBoardProps {
   filter: Filter;
+  todoList: TodoItemType[];
+  toggleDone: (index: number) => void;
+  removeTodo: (index: number) => void;
 }
 
-export default function TodoBoard({ filter }: TodoBoardProps) {
-  const { todoList } = useTodoContext();
-
+export default function TodoBoard({
+  filter,
+  todoList,
+  toggleDone,
+  removeTodo,
+}: TodoBoardProps) {
   const filteredList = todoList.filter((todo) => {
     if (filter === Filter.Done) return todo.done;
     if (filter === Filter.Undone) return !todo.done;
@@ -20,7 +25,13 @@ export default function TodoBoard({ filter }: TodoBoardProps) {
   ) : (
     <div className="flex flex-col gap-2 w-full">
       {filteredList.map((toDo, index) => (
-        <TodoItem key={index} toDo={toDo} index={index} />
+        <TodoItem
+          key={index}
+          toDo={toDo}
+          index={index}
+          toggleDone={toggleDone}
+          removeTodo={removeTodo}
+        />
       ))}
     </div>
   );
