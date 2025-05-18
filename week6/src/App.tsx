@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 import TodoBoard from './component/TodoBoard';
 import './App.css';
 import Header from './component/Header';
+import { Todo } from './types/types';
 
 function App() {
-    const [inputValue, setInputValue] = useState('');
-    const [todoList, setTodoList] = useState([]);
-    const [filter, setFilter] = useState('all');
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [targetId, setTargetId] = useState(null);
+    const [inputValue, setInputValue] = useState<string>('');
+    const [todoList, setTodoList] = useState<Todo[]>([]);
+    const [filter, setFilter] = useState<'all' | 'done' | 'undone'>('all');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [targetId, setTargetId] = useState<number | null>(null);
 
     // ✅ 1. localStorage에서 불러오기
     useEffect(() => {
