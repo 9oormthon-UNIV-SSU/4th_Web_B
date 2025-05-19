@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: pink;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 13px;
+    width: 300px;
+    border: 1px solid pink;
+    border-radius: 15px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ffcfe0;
+    color: rgb(255, 99, 125);
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-item {
+    border: 1px solid rgb(255, 154, 171);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    color: rgb(255, 105, 130);
+  }
+  
+  button.active {
+    background-color: hotpink;
+    color: white;
+    font-weight: bold;
+  }
+
+  button:disabled {
+    background-color: rgb(190, 190, 190);
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    font-size: 11px;
+    color: red;
+    margin: 25px;
+  }
+
+  .loading {
+    font-size: 11px;
+    color: rgb(255, 83, 112);
+    margin: 25px;
+  }
+
+  .modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 반투명 배경 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; /* 화면 가장 위에 */
+  }
+
+  .modal-content {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 50px;
+  }
