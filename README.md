@@ -1,5 +1,5 @@
 ## 진행 일정
-- 25.04.01 ~
+- 25.04.01 ~ 25.06.21(완료)
 
 ## 참여자
 | <a href="https://github.com/Chaerrrish"> 채린(스터디장) | <a href="https://github.com/jongse7"> 세종 | <a href="https://github.com/chunjaemin"> 재민 | <a href="https://github.com/naraeng"> 나래 | <a href="https://github.com/kangyeeun0"> 예은 |
